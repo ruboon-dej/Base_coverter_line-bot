@@ -6,10 +6,13 @@ ASK_FOR_VALUE = "What is the value ?"
 
 class User:
     def __init__(self):
+        self.reset()
+    
+    def reset(self):
         self.original_base = None
         self.target_base = None
         self.value = None
-    
+
     def get_response(self, text):
         if self.original_base is None:
             if text.isdigit():
@@ -30,7 +33,9 @@ class User:
         elif self.value is None:
             if text.isdigit():
                 self.value = int(text)
-                return self.calculate_answer()
+                answer = self.calculate_answer()
+                self.reset()
+                return answer
             else:
                 return ASK_FOR_VALUE
 
