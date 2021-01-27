@@ -68,10 +68,10 @@ def callback():
 def handle_message(event):
     user_id = event.source.user_id
 
-    user = cache.get(userId)
+    user = cache.get(user_id)
     if user is None:
         user = User()
-        cache.set(userId, user)
+        cache.set(user_id, user)
 
     text = user.get_response(event.message.text)
 
