@@ -31,7 +31,7 @@ class User:
 
 
         elif self.value is None:
-            self.value = int(text)
+            self.value = text
             answer = self.calculate_answer()
             self.reset()
             return answer
