@@ -30,7 +30,7 @@ class User:
         elif self.value is None:
             if text.isdigit():
                 self.value = int(text)
-                return self.calulate_answer()
+                return self.calculate_answer()
             else:
                 return ASK_FOR_VALUE
 
