@@ -31,13 +31,10 @@ class User:
 
 
         elif self.value is None:
-            if text.isdigit():
-                self.value = int(text)
-                answer = self.calculate_answer()
-                self.reset()
-                return answer
-            else:
-                return ASK_FOR_VALUE
+            self.value = int(text)
+            answer = self.calculate_answer()
+            self.reset()
+            return answer
 
     def calculate_answer(self):
         return convert(self.original_base, self.target_base, self.value)
